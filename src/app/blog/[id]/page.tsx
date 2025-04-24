@@ -1,7 +1,7 @@
-// "use client"
 import React from "react";
 import { FaDumbbell } from "react-icons/fa";
 import Image from "next/image";
+import { Metadata } from "next";
 
 interface Article {
   userId: number;
@@ -9,7 +9,6 @@ interface Article {
   title: string;
   body: string;
 }
-
 
 async function getData(id: string): Promise<Article> {
   const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
@@ -23,13 +22,23 @@ async function getData(id: string): Promise<Article> {
   return res.json();
 }
 
+export async function generateMetadata({ 
+  params,
+}: {
+  params: { id: string };
+}): Promise<Metadata> {
+  return {
+    title: `Article - ${params.id}`,
+    description: "Hero Gym Blog Article",
+  };
+}
 
- 
- export default async function Post({params}: { params: { id: string } })  {
-
+export default async function Post({ 
+  params,
+}: {
+  params: { id: string };
+}) {
   const article: Article = await getData(params.id);
-  // console.log(articles[1].title)
-  
 
   return (
     <div className="bg-white text-gray-800">
@@ -37,25 +46,23 @@ async function getData(id: string): Promise<Article> {
       <div className="bg-orange-600 text-white py-20 px-6 text-center">
         <FaDumbbell size={50} className="mx-auto mb-4" />
         <h1 className="text-4xl md:text-5xl font-bold mb-2">{article.title}</h1>
-        <p className="text-sm text-orange-100">descreption</p>
+        <p className="text-sm text-orange-100">description</p>
       </div>
 
       {/* Content */}
       <div className="max-w-6xl mx-auto px-4 py-16 flex flex-col md:flex-row-reverse gap-10 items-start">
-        {/* صورة المقال */}
+        {/* Article Image */}
         <div className="w-full md:w-3/8 h-64 md:h-[400px] relative rounded-2xl overflow-hidden shadow-lg">
           <Image
             src="https://images.pexels.com/photos/791763/pexels-photo-791763.jpeg"
-            alt="صورة المقال"
-            
+            alt="Article Image"
             fill
             className="object-cover"
           />
         </div>
 
-        {/* نص المقال */}
+        {/* Article Text */}
         <div className="w-full md:w-5/8 text-lg leading-relaxed space-y-6">
-         
           <p>{article.body}</p>
         </div>
       </div>
@@ -69,5 +76,4 @@ async function getData(id: string): Promise<Article> {
       </div>
     </div>
   );
-};
-
+}
