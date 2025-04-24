@@ -1,5 +1,5 @@
-@import "tailwindcss/preflight";
-@import "tailwindcss/utilities";
+@import "@tailwindcss/postcss/preflight";
+@import "@tailwindcss/postcss/utilities";
 
 :root {
   --background: #ffeadd;
