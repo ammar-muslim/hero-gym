@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function GymHeroSection() {
   return (
-<section className="flex flex-col md:flex-row items-center justify-between py-12 px-4 md:py-20 md:px-8 relative bg-orange-50 overflow-hidden">
+<section className="flex flex-col md:flex-row items-center justify-between py-12 px-4 cursor-pointer md:py-20 md:px-8 relative bg-orange-50 overflow-hidden">
       
       {/* Pattern Background */}
       <div className="absolute inset-0">
