@@ -1,7 +1,8 @@
 import React from "react";
-import { FaDumbbell } from "react-icons/fa";
+import { FaDumbbell, FaArrowLeft } from "react-icons/fa";
 import Image from "next/image";
 import { Metadata } from "next";
+import Link from "next/link";
 
 interface Article {
   userId: number;
@@ -27,9 +28,10 @@ export async function generateMetadata({
 }: {
   params: { id: string };
 }): Promise<Metadata> {
+  const article = await getData(params.id);
   return {
-    title: `Article - ${params.id}`,
-    description: "Hero Gym Blog Article",
+    title: article.title,
+    description: article.body.substring(0, 160),
   };
 }
 
@@ -44,9 +46,12 @@ export default async function Post({
     <div className="bg-white text-gray-800">
       {/* Header */}
       <div className="bg-orange-600 text-white py-20 px-6 text-center">
+        <Link href="/blog" className="absolute top-4 left-4 text-white hover:text-orange-200 flex items-center gap-2">
+          <FaArrowLeft /> Back to Blog
+        </Link>
         <FaDumbbell size={50} className="mx-auto mb-4" />
         <h1 className="text-4xl md:text-5xl font-bold mb-2">{article.title}</h1>
-        <p className="text-sm text-orange-100">description</p>
+        <p className="text-sm text-orange-100">Posted by User {article.userId}</p>
       </div>
 
       {/* Content */}
