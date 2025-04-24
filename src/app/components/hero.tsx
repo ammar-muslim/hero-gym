@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function GymHeroSection() {
   return (
-<section className="flex flex-col md:flex-row items-center justify-between py-12 px-4 cursor-pointer md:py-20 md:px-8 relative bg-orange-50 overflow-hidden">
+<section className="flex flex-col md:flex-row items-center justify-between py-12 px-4  md:py-20 md:px-8 relative bg-red-50 overflow-hidden">
       
       {/* Pattern Background */}
       <div className="absolute inset-0">
@@ -91,13 +91,13 @@ export default function GymHeroSection() {
             <Heart size={24} className="text-orange-500" />
           </div>
 
-          <div className="relative rounded-2xl shadow-2xl overflow-hidden border-4 border-white">
+          <div className="relative rounded-2xl shadow-2xl cursor-pointer overflow-hidden border-4 border-white">
             <Image
               src="/assets/images/gym-hero.PNG"
               alt="Gym Hero"
               width={320}
               height={480}
-              className="object-cover"
+              className="object-cover "
             />
             <div className="absolute inset-0 bg-gradient-to-t from-orange-900/20 to-transparent"></div>
           </div>
