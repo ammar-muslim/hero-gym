@@ -1,0 +1,7 @@
+.logo {
+    max-width: 160px;
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: #ff6b00;
+    transition: transform 0.2s ease;
+}

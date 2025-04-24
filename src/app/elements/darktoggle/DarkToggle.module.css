@@ -1,0 +1,73 @@
+.darkToggleContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .darkToggle {
+    position: relative;
+    display: flex;
+    background-color: #222;
+    border-radius: 30px;
+    padding: 5px;
+    width: 90px;
+    height: 40px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+  }
+  
+  .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+    z-index: 1;
+    transition: color 0.3s ease;
+    color: #777;
+  }
+  
+  .icon:first-child {
+    color: #fff;
+  }
+  
+  .switch {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    width: calc(50% - 5px);
+    height: calc(100% - 10px);
+    background-color: #ff7700;
+    border-radius: 25px;
+    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .darkToggle.light .switch {
+    transform: translateX(calc(100% + 5px));
+    background-color: #ff9933;
+  }
+  
+  .darkToggle.light {
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .darkToggle.light .icon:first-child {
+    color: #777;
+  }
+  
+  .darkToggle.light .icon:last-child {
+    color: #ff7700;
+  }
+  
+  /* لإضافة تأثيرات إضافية عند تحريك المؤشر فوق الزر */
+  .darkToggle:hover .switch {
+    box-shadow: 0 0 10px #ff7700;
+  }
+  
+  .darkToggle.light:hover .switch {
+    box-shadow: 0 0 10px #ff9933;
+  }

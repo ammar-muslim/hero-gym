@@ -1,0 +1,91 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 2rem;
+    background: linear-gradient(to right, #ffffff, #fff8f3);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.07);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo:hover {
+    transform: scale(1.03);
+}
+
+.navLinks {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.navLink {
+    text-decoration: none;
+    color: #555;
+    font-weight: 600;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navLink:hover {
+    color: #ff6b00;
+}
+
+.navLink::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -3px;
+    left: 0;
+    background-color: #ff6b00;
+    transition: width 0.2s ease;
+}
+
+.navLink:hover::after {
+    width: 100%;
+}
+
+
+
+
+
+
+.menuIcon {
+    display: none; /* Hidden by default */
+    font-size: 2rem;
+    cursor: pointer;
+    transition: transform 1.3s ease;  /* حدد خصائص الترانزيشن هنا */
+    color: #b65800;
+
+}
+
+
+
+
+@media (max-width: 768px) {
+    .menuIcon {
+        display: block; /* Show the hamburger icon on mobile */
+    }
+    .navLinks {
+        display: none; /* Hide the links initially */
+        flex-direction: column;
+        gap: 10px;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background-color: white;
+        padding: 1rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .navLinks.active {
+        display: flex; /* Show the links when the menu is active */
+    }
+
+
+}
+
+
