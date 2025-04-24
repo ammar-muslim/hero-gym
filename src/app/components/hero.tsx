@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function GymHeroSection() {
   return (
-<section className="flex flex-col md:flex-row items-center justify-between py-12 px-4  md:py-20 md:px-8 relative bg-orange-50 overflow-hidden">
+    <section className="min-h-[calc(100vh-100px)] flex flex-col md:flex-row items-center justify-between py-0 px-4 md:py-20 md:px-8 relative bg-orange-50 overflow-hidden">
       
       {/* Pattern Background */}
       <div className="absolute inset-0">
@@ -16,7 +16,7 @@ export default function GymHeroSection() {
 
       {/* Icon Background */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="grid grid-cols-6 grid-rows-6 gap-12 h-full w-full p-12">
+        <div className="grid grid-cols-6 grid-rows-6 gap-12 h-full w-full p-0">
           {[
             Dumbbell, Zap, Award, Flame, Timer, Target,
             Target, TrendingUp, Heart, Dumbbell, Award, Flame,
@@ -36,7 +36,7 @@ export default function GymHeroSection() {
       </div>
 
       {/* Text Content */}
-      <div className="md:w-1/2 text-center md:text-right z-10 p-6">
+      <div className="md:w-1/2 text-center md:text-right z-10 p-0">
         <div className="mb-2 inline-flex items-center px-3 py-1 rounded-full bg-orange-100 text-orange-600 text-sm font-medium">
           <Zap size={16} className="ml-1" />
           صالة رياضية حديثة ومتطورة
@@ -71,16 +71,16 @@ export default function GymHeroSection() {
         </div>
 
         <div className="mt-8 flex justify-center md:justify-end">
-  <button className="bg-orange-600 text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:bg-orange-700 transition duration-300 transform hover:scale-105 cursor-pointer flex items-center justify-center gap-2">
-    احجز تمرين تجريبي مجاني
-    <Zap size={18} />
-  </button>
-</div>
+          <button className="bg-orange-600 text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:bg-orange-700 transition duration-300 transform hover:scale-105 cursor-pointer flex items-center justify-center gap-2">
+            احجز تمرين تجريبي مجاني
+            <Zap size={18} />
+          </button>
+        </div>
       </div>
 
       {/* Image */}
-      <div className="hidden md:flex md:w-1/2 mt-12 md:mt-0 z-10 justify-center items-center">
-      <div className="relative">
+      <div className="hidden md:flex md:w-1/2 mt-12 md:my-10 z-10 justify-center items-center">
+        <div className="relative">
           <div className="absolute -z-10 w-full h-full bg-gradient-to-br from-orange-200 to-orange-100 rounded-full filter blur-3xl opacity-40"></div>
           
           <div className="absolute -top-6 -right-6 p-3 bg-white rounded-full shadow-lg">
@@ -95,9 +95,9 @@ export default function GymHeroSection() {
             <Image
               src="/assets/images/gym-hero.PNG"
               alt="Gym Hero"
-              width={320}
-              height={480}
-              className="object-cover "
+              width={250}
+              height={300}
+              className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-orange-900/20 to-transparent"></div>
           </div>
